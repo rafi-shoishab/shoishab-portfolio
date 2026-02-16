@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Rafiur Rahman Shoishab — Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Awesome (icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container header-inner">
+        <a class="logo" href="#home" aria-label="Go to Home">RRS</a>
+
+        <nav class="nav" id="navMenu" aria-label="Primary">
+          <ul>
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#about">About</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#skills">Skills</a></li>
+            <li><a class="nav-link" href="#research">Research</a></li>
+            <li><a class="nav-link" href="#achievements">ECA</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+            <li class="nav-cta">
+              <a class="btn btn-sm btn-outline" href="resume.html" target="_blank" 
+              rel="noopener noreferrer">Resume 
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- <div class="header-actions">
+          Dark mode toggle --
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            title="Toggle theme"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div> -->
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="kicker">Hello, I'm</p>
+          <h1 class="title">Rafiur Rahman Shoishab</h1>
+
+          <h3 class="changing-text">I am a <span id="rotateText"></span></h3>
+
+          <p class="desc">
+            Full stack developer focused on building responsive web
+            applications, integrating APIs, and delivering clean, user-friendly
+            interfaces.
+          </p>
+
+          <div class="hero-cta">
+            <button class="btn" id="viewWork">View My Work</button>
+            <a class="btn btn-outline" href="#contact">Contact Me</a>
+
+            <div class="socials" aria-label="Social links">
+              <a
+                href="https://github.com/rafi-shoishab"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rafishoishab"
+                target="_blank"
+                rel="noopener"
+                aria-label="LinkedIn"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="mailto:rsrafirahman@gmail.com" aria-label="Email">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-meta">
+            <span
+              ><i class="fa-solid fa-location-dot"></i> Mohammadpur, Dhaka</span
+            >
+            <span><i class="fa-solid fa-phone"></i> +8801727898545</span>
+          </div>
+        </div>
+
+        <div class="hero-img">
+          <div class="photo-card">
+            <img src="assets/profilepic.png" alt="Rafiur profile" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER STRIP -->
+    <section class="banner-strip" aria-label="Highlights">
+      <div class="container banner-inner">
+        <div class="badge-row">
+          <span class="mini-badge"
+            ><i class="fa-solid fa-chart-simple"></i> Data + Insights</span
+          >
+          <span class="mini-badge"
+            ><i class="fa-solid fa-laptop-code"></i> Web Apps</span
+          >
+          <span class="mini-badge"
+            ><i class="fa-solid fa-mobile-screen"></i> Android</span
+          >
+          <span class="mini-badge"
+            ><i class="fa-solid fa-flask"></i> Research</span
+          >
+          <span class="mini-badge"
+            ><i class="fa-solid fa-trophy"></i> ICPC Experience</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>About Me</h2>
+          <p class="subtext">
+            A Computer Science graduate passionate about modern web
+            technologies, clean UI, and building practical solutions with
+            measurable outcomes.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-ic"><i class="fa-solid fa-code"></i></div>
+            <h3>Frontend Development</h3>
+            <p>
+              Responsive interfaces with React/Next.js and clean component
+              structure.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-ic"><i class="fa-solid fa-database"></i></div>
+            <h3>Data & APIs</h3>
+            <p>
+              Comfortable with SQL basics, API integration, and data-driven UI
+              behavior.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-ic"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Team Collaboration</h3>
+            <p>
+              Experience with Git workflows, debugging, and reading
+              documentation.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Featured Projects</h2>
+          <!-- <p class="subtext">
+            Selected work—only GitHub links as you requested.
+          </p> -->
+        </div>
+
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="assets/p1.jpg" alt="ShopSphere project preview" />
+            </div>
+            <div class="project-body">
+              <h3>ShopSphere — E-commerce Web App</h3>
+              <p>
+                E-commerce website with role-based features for buyer, seller,
+                and admin. Includes filtering by type, price, and rating.
+              </p>
+              <div class="tags">
+                <span>Next.js</span><span>Shadcn</span><span>Mongoose</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-sm"
+                  href="https://github.com/rafi-shoishab/ShopSphere"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img
+                src="assets/sports.png"
+                alt="Sports Events Management preview"
+              />
+            </div>
+            <div class="project-body">
+              <h3>Sports Events Management Platform</h3>
+              <p>
+                Web platform for managing institutional sports events with
+                role-based UI for teachers, admins, and users.
+              </p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>PHP</span
+                ><span>JavaScript</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-sm"
+                  href="https://github.com/rafi-shoishab/Sports_Events_Management"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img
+                src="assets/iot.webp"
+                alt="Motion-Based Light Control System preview"
+              />
+            </div>
+            <div class="project-body">
+              <h3>Motion-Based Light Control System (IoT)</h3>
+              <p>
+                Automated light control using PIR sensor + Arduino UNO + relay.
+                Integrated Blynk for monitoring and manual override.
+              </p>
+              <div class="tags">
+                <span>Arduino</span><span>PIR</span><span>Relay</span
+                ><span>Blynk</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-sm"
+                  href="https://github.com/rafi-shoishab/MotionLight_IoT"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img src="assets/ebook.webp" alt="Ebook Library App preview" />
+            </div>
+            <div class="project-body">
+              <h3>Ebook Library (Android — Flutter)</h3>
+              <p>
+                Android app for browsing and reading eBooks with a simple UI and
+                structured content organization.
+              </p>
+              <div class="tags">
+                <span>Flutter</span><span>Dart</span><span>Android</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-sm"
+                  href="https://github.com/rafi-shoishab/Ebook-Library-App"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card">
+            <div class="project-media">
+              <img
+                src="assets/university_app.png"
+                alt="University Info App preview"
+              />
+            </div>
+            <div class="project-body">
+              <h3>University Info App (Android — Java)</h3>
+              <p>
+                Native Android app showing structured university data with
+                RecyclerView, multiple activities, and smooth navigation.
+              </p>
+              <div class="tags">
+                <span>Java</span><span>Android SDK</span
+                ><span>RecyclerView</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  class="btn btn-sm"
+                  href="https://github.com/rafi-shoishab/univarsity-info-App"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  GitHub <i class="fa-brands fa-github"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <!-- <p class="subtext">
+            Backend-focused development with Python & Django, supported by
+            modern frontend fundamentals.
+          </p> -->
+        </div>
+
+        <div class="skills-wrap">
+          <!-- Backend -->
+          <div class="skill-row">
+            <h3 class="skill-head">Backend</h3>
+            <div class="skill-items highlight">
+              <span>Python</span>
+              <span>Django</span>
+              <span>Django REST Framework</span>
+              <span>REST APIs</span>
+              <span>Authentication (JWT / Session)</span>
+            </div>
+          </div>
+
+          <!-- Database -->
+          <div class="skill-row">
+            <h3 class="skill-head">Database</h3>
+            <div class="skill-items">
+              <span>PostgreSQL</span>
+              <span>MySQL</span>
+              <span>SQLite</span>
+              <span>Django ORM</span>
+            </div>
+          </div>
+
+          <!-- Frontend -->
+          <div class="skill-row">
+            <h3 class="skill-head">Frontend</h3>
+            <div class="skill-items">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>Bootstrap</span>
+              <span>Tailwind CSS</span>
+              <span>JavaScript (Basic)</span>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="skill-row">
+            <h3 class="skill-head">Tools</h3>
+            <div class="skill-items">
+              <span>Git & GitHub</span>
+              <span>VS Code</span>
+              <span>Postman</span>
+              <span>Jupyter NoteBook</span>
+              <span>Google Colab</span>
+              <span>Linux (Basic)</span>
+            </div>
+          </div>
+          <!-- others -->
+          <div class="skill-row">
+            <h3 class="skill-head">Others (DS/ML)</h3>
+            <div class="skill-items">
+              <span>C++</span>
+              <span>Pandas</span>
+              <span>NumPy</span>
+              <span>Matplotlib</span>
+              <span>Scikit-learn (Basic)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH -->
+    <section id="research" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Research</h2>
+          <p class="subtext">Academic work and investigation experience.</p>
+        </div>
+
+        <article class="feature-card">
+          <div class="feature-top">
+            <h3>
+              Enhancing Logical Reasoning Skills in Early Childhood Education
+              through Computational Thinking Approaches
+            </h3>
+            <span class="pill">Accepted — ICRTMR Conference</span>
+          </div>
+          <ul class="feature-list">
+            <li>Mixed-methods study with 100 children (ages 4–6).</li>
+            <li>
+              Used paired t-tests, regression analysis, and thematic coding.
+            </li>
+            <li>
+              Focused on CT activities and their impact on logical reasoning.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Extra Curricular Activities -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Extra Curricular Activities</h2>
+          <p class="subtext">
+            Competitions, roles, and activities that reflect initiative and
+            teamwork.
+          </p>
+        </div>
+
+        <div class="two-col">
+          <article class="mini-card">
+            <h3><i class="fa-solid fa-trophy"></i> ICPC Experience</h3>
+            <p>
+              Participated in ICPC Asia Dhaka preliminary contests (2022–2024)
+              and team-based problem solving.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <h3>
+              <i class="fa-solid fa-coins"></i> Assistant Treasurer — CSE Club
+            </h3>
+            <p>
+              Supported event operations and helped manage budgets/records for
+              programming contest activities.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <h3>
+              <i class="fa-solid fa-bullhorn"></i> ICT Olympiad — Campus
+              Ambassador
+            </h3>
+            <p>
+              Helped organize workshops/seminars and encouraged student
+              participation in ICT activities.
+            </p>
+          </article>
+
+          <article class="mini-card">
+            <h3>
+              <i class="fa-solid fa-chalkboard-user"></i> Co-Founder & ICT
+              Mentor
+            </h3>
+            <p>
+              Co-founded an academic center and taught ICT fundamentals to
+              students (Udvabon Academy).
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Get In Touch</h2>
+          <p class="subtext">
+            For internships, freelance work, collaboration, or opportunities.
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <div class="c-info">
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:rsrafirahman@gmail.com">rsrafirahman@gmail.com</a>
+            </p>
+            <p>
+              <i class="fa-brands fa-whatsapp"></i>
+              <a
+                href="https://wa.me/8801727898545"
+                target="_blank"
+                rel="noopener"
+                >+8801727898545</a
+              >
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot"></i> Mohammadpur, Dhaka,
+              Bangladesh
+            </p>
+          </div>
+
+          <form class="c-form" onsubmit="return false;">
+            <input type="text" placeholder="Your Name" aria-label="Your name" />
+            <input
+              type="email"
+              placeholder="Your Email"
+              aria-label="Your email"
+            />
+            <textarea
+              placeholder="Your Message"
+              aria-label="Your message"
+            ></textarea>
+            <button class="btn" type="button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container foot-inner">
+        <span>© 2025 Rafiur Rahman Shoishab</span>
+        <div class="foot-links">
+          <a
+            href="https://github.com/rafi-shoishab"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/rafishoishab"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+          <a href="#home">Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
