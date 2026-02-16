@@ -1,18 +1,3 @@
-// -------------------- Hamburger Menu --------------------
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
-
-hamburger?.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
-
-// Close nav on link click (mobile)
-document.querySelectorAll(".nav a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
-  });
-});
-
 // -------------------- Smooth Scroll --------------------
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -22,14 +7,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     if (!target) return;
 
     e.preventDefault();
-    const headerOffset = 76; // fixed header height
-    const elementPosition = target.offsetTop;
-    const offsetPosition = elementPosition - headerOffset;
+    const headerOffset = 76;
+    const offsetPosition = target.offsetTop - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   });
 });
 
@@ -42,9 +23,7 @@ window.addEventListener("scroll", () => {
 
   sections.forEach((section) => {
     const sectionTop = section.offsetTop - 120;
-    if (window.pageYOffset >= sectionTop) {
-      currentSection = section.getAttribute("id");
-    }
+    if (window.pageYOffset >= sectionTop) currentSection = section.getAttribute("id");
   });
 
   navLinks.forEach((link) => {
@@ -91,6 +70,46 @@ function typeEffect() {
   setTimeout(typeEffect, deleting ? 45 : 90);
 }
 
+// -------------------- Project Filters --------------------
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectCards = document.querySelectorAll(".project-card");
+const noProjects = document.getElementById("noProjects");
+
+function setActiveFilter(btn) {
+  filterButtons.forEach((b) => {
+    b.classList.remove("active");
+    b.setAttribute("aria-selected", "false");
+  });
+  btn.classList.add("active");
+  btn.setAttribute("aria-selected", "true");
+}
+
+function applyFilter(filter) {
+  let visibleCount = 0;
+
+  projectCards.forEach((card) => {
+    const category = card.getAttribute("data-category");
+    const show = filter === "all" || category === filter;
+
+    if (show) {
+      card.classList.remove("is-hidden");
+      visibleCount++;
+    } else {
+      card.classList.add("is-hidden");
+    }
+  });
+
+  if (noProjects) noProjects.hidden = visibleCount !== 0;
+}
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const filter = btn.getAttribute("data-filter");
+    setActiveFilter(btn);
+    applyFilter(filter);
+  });
+});
+
 // -------------------- DOM Ready --------------------
 document.addEventListener("DOMContentLoaded", () => {
   typeEffect();
@@ -100,10 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
   viewBtn?.addEventListener("click", () => {
     const projects = document.getElementById("projects");
     if (!projects) return;
-
-    window.scrollTo({
-      top: projects.offsetTop - 76,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: projects.offsetTop - 76, behavior: "smooth" });
   });
+
+  // default filter
+  applyFilter("all");
 });

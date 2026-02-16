@@ -16,24 +16,11 @@
   --radiusSm:12px;
 }
 
-
 *{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
 body{background:var(--bg);color:var(--ink);line-height:1.55;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
 ul{list-style:none;}
-
-/* ---------- Dark Mode ---------- */
-body.dark{
-  --bg:#0b0f17;
-  --surface:#121826;
-  --ink:#e7ecf5;
-  --muted:#aab3c5;
-  --line:rgba(255,255,255,.10);
-  --accentSoft:rgba(255,87,34,.14);
-  --shadow:0 16px 50px rgba(0,0,0,.45);
-  --shadow2:0 12px 30px rgba(0,0,0,.35);
-}
 
 /* ---------- Layout ---------- */
 .container{max-width:1120px;margin:0 auto;padding:0 24px;}
@@ -50,39 +37,12 @@ body.dark{
   backdrop-filter: blur(10px);
   border-bottom:1px solid var(--line);
 }
-
-@media (max-width: 760px){
-  .nav{
-    background: color-mix(in srgb, var(--surface) 96%, transparent);
-    border-bottom: 1px solid var(--line);
-  }
-}
-
 .header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
 .logo{font-weight:800;letter-spacing:.02em;color:var(--accent);font-size:20px;}
 .nav ul{display:flex;align-items:center;gap:10px;}
 .nav a{padding:10px 12px;border-radius:10px;color:var(--ink);font-size:14px;}
 .nav a:hover,.nav a.active{background:var(--accentSoft);color:var(--accent);}
 .nav-cta{margin-left:6px;}
-
-.header-actions{display:flex;align-items:center;gap:10px;}
-
-.hamburger{
-  display:none;border:none;background:transparent;
-  font-size:22px;cursor:pointer;color:var(--ink);
-}
-
-/* Theme toggle */
-.theme-toggle{
-  width:42px;height:42px;border-radius:12px;
-  border:1px solid var(--line);
-  background:var(--surface);
-  color:var(--ink);
-  display:grid;place-items:center;
-  cursor:pointer;box-shadow:var(--shadow2);
-  transition:transform .16s ease;
-}
-.theme-toggle:hover{transform:translateY(-2px);}
 
 /* Buttons */
 .btn{
@@ -206,7 +166,7 @@ body.dark{
   border-radius:18px;
   box-shadow:var(--shadow2);
   overflow:hidden;
-  transition:transform .18s ease;
+  transition:transform .18s ease, opacity .18s ease;
 }
 .project-card:hover{transform:translateY(-6px);}
 .project-media{height:190px;overflow:hidden;}
@@ -224,6 +184,42 @@ body.dark{
 }
 .project-actions{display:flex;gap:10px;flex-wrap:wrap;}
 
+/* --- Filter UI --- */
+.filter-bar{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:center;
+  margin: 10px 0 26px;
+}
+.filter-btn{
+  border: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface) 82%, var(--bg));
+  color: var(--ink);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform .16s ease, background .16s ease, border-color .16s ease;
+}
+.filter-btn:hover{ transform: translateY(-2px); }
+.filter-btn.active{
+  background: rgba(255,87,34,.14);
+  border-color: rgba(255,87,34,.30);
+  color: var(--ink);
+  box-shadow: var(--shadow2);
+}
+.project-card.is-hidden{
+  display:none;
+}
+.no-projects{
+  text-align:center;
+  color: var(--muted);
+  margin-top: 14px;
+  font-weight: 700;
+}
+
 /* ---------- Skills ---------- */
 .skills-wrap{margin-top:10px;}
 .skill-row{
@@ -237,21 +233,16 @@ body.dark{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-
   background: rgba(255,87,34,.14);
   border: 1px solid rgba(255,87,34,.28);
   color: var(--ink);
-
   padding: 10px 14px;
   border-radius: 999px;
-
   font-weight: 800;
   font-size: 13px;
   letter-spacing:.01em;
-
   box-shadow: var(--shadow2);
 }
-
 .skill-items{display:flex;flex-wrap:wrap;gap:10px;}
 .skill-items span{
   background:var(--surface);
@@ -340,7 +331,6 @@ body.dark{
   padding:18px 0;
   margin-top:30px;
 }
-body.dark .footer{background:#070a10;}
 .foot-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
 .foot-links{display:flex;gap:14px;flex-wrap:wrap;}
 .foot-links a{color:#cfd4e3;text-decoration:underline;text-underline-offset:3px;opacity:.9;}
@@ -358,24 +348,7 @@ body.dark .footer{background:#070a10;}
 }
 
 @media (max-width: 760px){
-  .hamburger{display:block;}
-  .nav{
-    position:absolute;
-    top:72px;left:0;right:0;
-    background:color-mix(in srgb, var(--surface) 96%, transparent);
-    border-bottom:1px solid var(--line);
-    display:none;
-  }
-  .nav.active{display:block;}
-  .nav ul{
-    flex-direction:column;
-    align-items:stretch;
-    padding:10px 14px 14px;
-    gap:6px;
-  }
-  .nav a{display:block;}
-  .nav-cta{width:100%;}
-  .nav-cta a{width:100%;display:flex;justify-content:center;}
+  .nav ul{flex-wrap:wrap;justify-content:center;}
   .project-grid{grid-template-columns:1fr;}
   .cards{grid-template-columns:1fr;}
   .two-col{grid-template-columns:1fr;}
@@ -386,11 +359,7 @@ body.dark .footer{background:#070a10;}
 /* =========================
    Resume Page Styles
 ========================= */
-.resume{
-  padding-top: 110px; /* fixed header space */
-  padding-bottom: 60px;
-}
-
+.resume{padding-top: 110px;padding-bottom: 60px;}
 .resume-hero{
   background: var(--surface);
   border: 1px solid var(--line);
@@ -403,25 +372,9 @@ body.dark .footer{background:#070a10;}
   align-items: start;
   margin-top: 18px;
 }
-
-.resume-name{
-  font-size: 30px;
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-}
-
-.resume-title{
-  color: var(--muted);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.resume-contacts{
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-}
-
+.resume-name{font-size: 30px;letter-spacing: -0.02em;margin-bottom: 6px;}
+.resume-title{color: var(--muted);font-weight: 700;margin-bottom: 12px;}
+.resume-contacts{display: grid;grid-template-columns: 1fr;gap: 8px;}
 .resume-contacts a, .resume-contacts span{
   color: var(--ink);
   opacity: .95;
@@ -430,23 +383,9 @@ body.dark .footer{background:#070a10;}
   gap: 10px;
   font-weight: 700;
 }
-
 .resume-contacts i{ color: var(--accent); }
-
-.resume-hero-actions{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: stretch;
-}
-
-.resume-grid{
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 18px;
-  margin-top: 18px;
-}
-
+.resume-hero-actions{display: flex;flex-direction: column;gap: 10px;align-items: stretch;}
+.resume-grid{display: grid;grid-template-columns: 1.2fr .8fr;gap: 18px;margin-top: 18px;}
 .resume-card{
   background: var(--surface);
   border: 1px solid var(--line);
@@ -454,27 +393,9 @@ body.dark .footer{background:#070a10;}
   border-radius: 18px;
   padding: 18px;
 }
-
-.resume-card h2{
-  font-size: 16px;
-  margin-bottom: 10px;
-  letter-spacing: .01em;
-}
-
-.resume-sub{
-  margin-top: 12px;
-  font-size: 13px;
-  color: var(--muted);
-  font-weight: 800;
-}
-
-.resume-tags{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
+.resume-card h2{font-size: 16px;margin-bottom: 10px;letter-spacing: .01em;}
+.resume-sub{margin-top: 12px;font-size: 13px;color: var(--muted);font-weight: 800;}
+.resume-tags{display: flex;flex-wrap: wrap;gap: 10px;margin-top: 10px;}
 .resume-tags span{
   background: color-mix(in srgb, var(--surface) 85%, var(--bg));
   border: 1px solid var(--line);
@@ -483,43 +404,15 @@ body.dark .footer{background:#070a10;}
   font-weight: 800;
   font-size: 12px;
 }
-
-.resume-item{
-  padding: 12px 0;
-  border-top: 1px dashed var(--line);
-}
+.resume-item{padding: 12px 0;border-top: 1px dashed var(--line);}
 .resume-item:first-of-type{ border-top: none; padding-top: 0; }
-
-.resume-item-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap: 12px;
-}
-
-.resume-item h3{
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.resume-item ul{
-  padding-left: 18px;
-  color: var(--muted);
-}
+.resume-item-top{display:flex;align-items:flex-start;justify-content:space-between;gap: 12px;}
+.resume-item h3{font-size: 14px;margin-bottom: 6px;}
+.resume-item ul{padding-left: 18px;color: var(--muted);}
 .resume-item li{ margin: 6px 0; }
-
-.resume-link{
-  font-weight: 800;
-  color: var(--accent);
-  white-space: nowrap;
-}
-
-.resume-list{
-  padding-left: 18px;
-  color: var(--muted);
-}
+.resume-link{font-weight: 800;color: var(--accent);white-space: nowrap;}
+.resume-list{padding-left: 18px;color: var(--muted);}
 .resume-list li{ margin: 8px 0; }
-
 .muted{ color: var(--muted); }
 
 /* responsive */
@@ -530,85 +423,45 @@ body.dark .footer{background:#070a10;}
 }
 
 /* print */
-/* print */
 @media print {
+  @page { size: A4; margin: 10mm; }
 
-  @page {
-    size: A4;
-    margin: 5mm; /* 6mm -> 5mm */
-  }
+  body { background:#fff !important; color:#000 !important; font-size:10.5px !important; line-height:1.20 !important; }
+  .header, .footer, .resume-hero-actions { display:none !important; }
+  .resume { padding:0 !important; zoom: 1.0; }
+  .container { max-width:100% !important; padding:0 !important; }
 
-  body {
-    background: #fff !important;
-    color: #000 !important;
-    font-size: 9px !important;     /* 10px -> 9px */
-    line-height: 1.18 !important;  /* 1.25 -> 1.18 */
-  }
-
-  /* keep 2-col in print (left/right) */
   .resume-grid{
-    display: grid !important;
+    display:grid !important;
     grid-template-columns: 1.2fr .8fr !important;
-    gap: 5px !important;           /* 6px -> 5px */
-    margin-top: 5px !important;    /* 6px -> 5px */
+    gap:5px !important;
+    margin-top:5px !important;
   }
 
   .resume-hero{
-    display: grid !important;
+    display:grid !important;
     grid-template-columns: 1.2fr .8fr !important;
-    gap: 8px !important;
-    padding: 5px !important;       /* 6px -> 5px */
-    margin: 0 !important;
+    gap:8px !important;
+    padding:5px !important;
+    margin:0 !important;
+    box-shadow:none !important;
+    border:1px solid #ccc !important;
+    border-radius:6px !important;
   }
 
   .resume-card{
-    padding: 5px !important;       /* 6px -> 5px */
-    margin: 0 !important;
+    padding:5px !important;
+    margin:0 !important;
+    box-shadow:none !important;
+    border:1px solid #ccc !important;
+    border-radius:6px !important;
   }
 
-  .resume-item{
-    padding: 3px 0 !important;     /* 4px -> 3px */
-  }
+  .resume-item{ padding:3px 0 !important; }
+  .resume-item li, .resume-list li{ margin:1px 0 !important; }
 
-  .resume-item li,
-  .resume-list li{
-    margin: 1px 0 !important;      /* 2px -> 1px */
-  }
+  .resume-tags{ gap:3px !important; margin-top:3px !important; }
+  .resume-tags span{ font-size:7.4px !important; padding:2px 5px !important; border:1px solid #ccc !important; background:#f2f2f2 !important; }
 
-  .resume-tags{
-    gap: 3px !important;           /* 4px -> 3px */
-    margin-top: 3px !important;    /* 4px -> 3px */
-  }
-
-  .resume-tags span{
-    font-size: 7.4px !important;   /* 8px -> 7.4px */
-    padding: 2px 5px !important;   /* 3x6 -> 2x5 */
-  }
-
-  /* optional: tiny overall shrink if still 2 pages */
-  .resume{ zoom: 0.95; }           /* try 0.93 if needed */
-
-  .header,
-  .footer,
-  .resume-hero-actions {
-    display: none !important;
-  }
-
-  .container {
-    max-width: 100% !important;
-    padding: 0 !important;
-  }
-
-  .resume-hero,
-  .resume-card {
-    box-shadow: none !important;
-    border: 1px solid #ccc !important;
-    border-radius: 6px !important;
-  }
-
-  .resume-card,
-  .resume-hero {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
+  .resume-card, .resume-hero{ break-inside: avoid; page-break-inside: avoid; }
 }
