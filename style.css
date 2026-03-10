@@ -824,6 +824,25 @@ ul {
   color: var(--muted);
 }
 
+.banner-strip {
+  padding: 18px 0 34px;
+}
+.banner-inner {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow2);
+  padding: 16px 16px;
+}
+h2 {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  border: 1px solid rgba(255, 87, 34, 0.18);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+}
+
 /* responsive */
 @media (max-width: 980px) {
   .resume-hero {
